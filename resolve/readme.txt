@@ -39,7 +39,7 @@ Examples
 <type 'datetime.datetime'>
 
 >>> resolve('datetime.datetime.now')
-<built-in method now of type object at 0x1E1C9D88>
+<built-in method now of type object at ...>
 
 >>> resolve('non existent module')
 Traceback (most recent call last):
