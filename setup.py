@@ -4,7 +4,7 @@
 import os
 from setuptools import setup, find_packages
 
-name = 'testfixtures'
+name = 'resolve'
 package_dir = os.path.join(os.path.dirname(__file__),name)
 
 setup(
@@ -13,11 +13,11 @@ setup(
     author='Chris Withers',
     author_email='chris@simplistix.co.uk',
     license='MIT',
-    description="A collection of helpers and mock objects for unit tests and doc tests.",
+    description="Resolves strings containing dotted names into their objects.",
     long_description=open(os.path.join(package_dir,'readme.txt')).read(),
-    url='http://www.simplistix.co.uk/software/python/testfixtures',
+    url='http://www.simplistix.co.uk/software/python/resolve',
     classifiers=[
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
     ],    
