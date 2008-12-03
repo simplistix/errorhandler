@@ -4,7 +4,7 @@
 import os
 from setuptools import setup, find_packages
 
-name = 'resolve'
+name = 'errorhandler'
 package_dir = os.path.join(os.path.dirname(__file__),name)
 
 setup(
@@ -13,7 +13,7 @@ setup(
     author='Chris Withers',
     author_email='chris@simplistix.co.uk',
     license='MIT',
-    description="Resolves strings containing dotted names into their objects.",
+    description="A logging framework handler that tracks when messages above a certain level have been logged.",
     long_description=open(os.path.join(package_dir,'readme.txt')).read(),
     url='http://www.simplistix.co.uk/software/python/resolve',
     classifiers=[
