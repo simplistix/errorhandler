@@ -15,7 +15,7 @@ setup(
     license='MIT',
     description="A logging framework handler that tracks when messages above a certain level have been logged.",
     long_description=open(os.path.join(package_dir,'readme.txt')).read(),
-    url='http://www.simplistix.co.uk/software/python/resolve',
+    url='http://www.simplistix.co.uk/software/python/errorhandler',
     classifiers=[
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
@@ -27,9 +27,9 @@ setup(
     )
 
 # to build and upload the eggs, do:
-# python setup.py sdist bdist_egg register upload
+# python setup.py sdist register upload
 # ...or...
-#  bin/buildout setup setup.py sdist bdist_egg register upload
+#  bin/buildout setup setup.py sdist register upload
 # ...on a unix box!
 
 # To check how things will show on pypi, install docutils and then:
