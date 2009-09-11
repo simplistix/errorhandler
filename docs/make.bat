@@ -3,7 +3,7 @@
 REM Command file for Sphinx documentation
 
 set SPHINXBUILD=..\bin\sphinx-build
-set ALLSPHINXOPTS=-d ../docs/doctrees %SPHINXOPTS% .
+set ALLSPHINXOPTS=-d _build/doctrees %SPHINXOPTS% .
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
@@ -27,85 +27,85 @@ if "%1" == "help" (
 )
 
 if "%1" == "clean" (
-	for /d %%i in (../docs\*) do rmdir /q /s %%i
-	del /q /s ../docs\*
+	for /d %%i in (_build\*) do rmdir /q /s %%i
+	del /q /s _build\*
 	goto end
 )
 
 if "%1" == "html" (
-	%SPHINXBUILD% -b html %ALLSPHINXOPTS% ../docs/html
+	%SPHINXBUILD% -b html %ALLSPHINXOPTS% _build/html
 	echo.
-	echo.Build finished. The HTML pages are in ../docs/html.
+	echo.Build finished. The HTML pages are in _build/html.
 	goto end
 )
 
 if "%1" == "dirhtml" (
-	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% ../docs/dirhtml
+	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% _build/dirhtml
 	echo.
-	echo.Build finished. The HTML pages are in ../docs/dirhtml.
+	echo.Build finished. The HTML pages are in _build/dirhtml.
 	goto end
 )
 
 if "%1" == "pickle" (
-	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% ../docs/pickle
+	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% _build/pickle
 	echo.
 	echo.Build finished; now you can process the pickle files.
 	goto end
 )
 
 if "%1" == "json" (
-	%SPHINXBUILD% -b json %ALLSPHINXOPTS% ../docs/json
+	%SPHINXBUILD% -b json %ALLSPHINXOPTS% _build/json
 	echo.
 	echo.Build finished; now you can process the JSON files.
 	goto end
 )
 
 if "%1" == "htmlhelp" (
-	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% ../docs/htmlhelp
+	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% _build/htmlhelp
 	echo.
 	echo.Build finished; now you can run HTML Help Workshop with the ^
-.hhp project file in ../docs/htmlhelp.
+.hhp project file in _build/htmlhelp.
 	goto end
 )
 
 if "%1" == "qthelp" (
-	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% ../docs/qthelp
+	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% _build/qthelp
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
-.qhcp project file in ../docs/qthelp, like this:
-	echo.^> qcollectiongenerator ../docs\qthelp\ErrorHandler.qhcp
+.qhcp project file in _build/qthelp, like this:
+	echo.^> qcollectiongenerator _build\qthelp\ErrorHandler.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile ../docs\qthelp\ErrorHandler.ghc
+	echo.^> assistant -collectionFile _build\qthelp\ErrorHandler.ghc
 	goto end
 )
 
 if "%1" == "latex" (
-	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% ../docs/latex
+	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% _build/latex
 	echo.
-	echo.Build finished; the LaTeX files are in ../docs/latex.
+	echo.Build finished; the LaTeX files are in _build/latex.
 	goto end
 )
 
 if "%1" == "changes" (
-	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% ../docs/changes
+	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% _build/changes
 	echo.
-	echo.The overview file is in ../docs/changes.
+	echo.The overview file is in _build/changes.
 	goto end
 )
 
 if "%1" == "linkcheck" (
-	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% ../docs/linkcheck
+	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% _build/linkcheck
 	echo.
 	echo.Link check complete; look for any errors in the above output ^
-or in ../docs/linkcheck/output.txt.
+or in _build/linkcheck/output.txt.
 	goto end
 )
 
 if "%1" == "doctest" (
-	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% ../docs/doctest
+	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% _build/doctest
 	echo.
 	echo.Testing of doctests in the sources finished, look at the ^
-results in ../docs/doctest/output.txt.
+results in _build/doctest/output.txt.
 	goto end
 )
 
