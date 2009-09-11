@@ -22,3 +22,5 @@ setup(
     'License :: OSI Approved :: MIT License',
     ],    
     packages=[package_name],
+    zip_safe=False,
+    )
