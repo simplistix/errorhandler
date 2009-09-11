@@ -33,4 +33,4 @@ setup(
 # ...on a unix box!
 
 # To check how things will show on pypi, install docutils and then:
-# bin/buildout -q setup setup.py --long-description | rst2html.py --link-stylesheet --stylesheet=http://www.python.org/styles/styles.css > dist/desc.html
+# bin/py setup.py --long-description | bin/rst2 html --link-stylesheet --stylesheet=http://www.python.org/styles/styles.css > dist/desc.html
