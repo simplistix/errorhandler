@@ -17,13 +17,16 @@ As an example, first, you set up the error handler:
 Then you can log and check the handler at any point to see if it has
 been triggered:
 
->>> from logging import getLogger
 >>> e.fired
 False
+>>> from logging import getLogger
+>>> logger = getLogger()
 >>> logger.error('an error')
+>>> e.fired
+True
 
-You use the `fired` attribute to only perform actions when no errors
-have been logged:
+You can use the `fired` attribute to only perform actions when no
+errors have been logged:
 
 >>> if e.fired:
 ...   print "Not updating files as errors have occurred"

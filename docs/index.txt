@@ -1,50 +1,13 @@
-.. ErrorHandler documentation master file, created by
-   sphinx-quickstart on Tue Jun 30 12:35:10 2009.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to ErrorHandler's documentation!
-========================================
-
-This is a TEST!
-
-Just testing some ReST for now, come back later for the real package!
-
-.. topic:: myfile.py
-   :class: file
-
-   ::
-
-        class MyClass:
-           def something(self):
-              pass
-
-**myfile.py**::
-
-        class MyClass:
-           def something(self):
-              pass
-
-I wonder how topics render on PyPI?
-
-.. function:: foo(x)
-
-   :param x: blah
-   :rtype: :class:`Bar`
-
-   Return the foo.
-
-How about :class:logging.Handler ?
-
-.. automodule:: errorhandler
-  :members:
-  :undoc-members:
-
-Contents:
+ErrorHandler documentation
+==========================
 
 .. toctree::
    :maxdepth: 2
 
+   installation.txt
+   use.txt
+   api.txt
+   development.txt
    changes.txt
    license.txt
 

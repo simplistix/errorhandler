@@ -5,5 +5,5 @@ The easyiest way to install ErrorHandler is::
 
   easy_install errorhandler
 
-Or, if you're using zc.buildout, just specify `errorhandler` as a
+Or, if you're using `zc.buildout`, just specify ``errorhandler`` as a
 required egg. 
