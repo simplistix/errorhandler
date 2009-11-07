@@ -1,7 +1,7 @@
 Changes
 =======
 
-1.1.0 (xx Sep 2009)
+1.1.0 (07 Nov 2009)
 -------------------
 
 - Switched to Sphinx documentation
