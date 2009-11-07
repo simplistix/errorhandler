@@ -1,36 +1,26 @@
-# Copyright (c) 2008 Simplistix Ltd
+# Copyright (c) 2008-2009 Simplistix Ltd
 # See license.txt for license details.
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
-name = 'errorhandler'
-package_dir = os.path.join(os.path.dirname(__file__),name)
+package_name = 'errorhandler'
+base_dir = os.path.dirname(__file__)
 
 setup(
-    name=name,
-    version=file(os.path.join(package_dir,'version.txt')).read().strip(),
+    name=package_name,
+    version=file(os.path.join(base_dir,package_name,'version.txt')).read().strip(),
     author='Chris Withers',
     author_email='chris@simplistix.co.uk',
     license='MIT',
     description="A logging framework handler that tracks when messages above a certain level have been logged.",
-    long_description=open(os.path.join(package_dir,'readme.txt')).read(),
-    url='http://www.simplistix.co.uk/software/python/resolve',
+    long_description=open(os.path.join(base_dir,'docs','description.txt')).read(),
+    url='http://www.simplistix.co.uk/software/python/errorhandler',
     classifiers=[
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
     ],    
-    packages=find_packages(),
+    packages=[package_name],
     zip_safe=False,
-    include_package_data=True,
     )
-
-# to build and upload the eggs, do:
-# python setup.py sdist bdist_egg register upload
-# ...or...
-#  bin/buildout setup setup.py sdist bdist_egg register upload
-# ...on a unix box!
-
-# To check how things will show on pypi, install docutils and then:
-# bin/buildout -q setup setup.py --long-description | rst2html.py --link-stylesheet --stylesheet=http://www.python.org/styles/styles.css > dist/desc.html

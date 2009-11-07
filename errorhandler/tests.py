@@ -4,35 +4,14 @@
 # http://www.opensource.org/licenses/mit-license.html
 # See license.txt for more details.
 
+from glob import glob
 import logging
+from os.path import dirname,join,pardir
 import unittest
 from doctest import DocFileSuite,DocTestSuite,REPORT_NDIFF,ELLIPSIS
 from errorhandler import ErrorHandler
 
 class TestErrorHandler:
-
-    def test_level(self):
-        """
-        The logging level at which the ErrorHandler is fired can also
-        be configured: 
-
-        >>> from logging import INFO
-        >>> e = ErrorHandler(INFO)
-
-        Debugging messages still don't trigger:
-        
-        >>> logger.debug('debugging')
-        >>> e.fired
-        False
-
-        But now informational messages do:
-
-        >>> logger.info('some information')
-        >>> e.fired
-        True
-
-        >>> e.remove()
-        """
 
     def test_level_greater_than_configured(self):
         """
@@ -45,44 +24,6 @@ class TestErrorHandler:
         In this case, an ERROR will make a good example:
         
         >>> logger.error('an error')
-        >>> e.fired
-        True
-
-        >>> e.remove()
-        """
-
-    def test_logger_name(self):
-        """
-        The error handler can be set to only trigger on a certain
-        logger and its children:
-
-        >>> from logging import getLogger
-        >>> e = ErrorHandler(logger='b')
-
-        Now lets get three loggers:
-        
-        >>> a = getLogger()
-        >>> b = getLogger('b')
-        >>> c = getLogger('b.c')
-
-        Logging to `a` won't trigger the handler:
-        
-        >>> a.critical('message')
-        >>> e.fired
-        False
-
-        Logging to `b` will trigger the handler:
-        
-        >>> b.critical('message')
-        >>> e.fired
-        True
-        >>> e.reset()
-        >>> e.fired
-        False
-
-        Logging to `c` will also trigger the handler:
-
-        >>> c.critical('message')
         >>> e.fired
         True
 
@@ -182,10 +123,13 @@ options = REPORT_NDIFF|ELLIPSIS
 
 def test_suite():
     return unittest.TestSuite((
-        DocFileSuite('readme.txt',
-                     setUp=setUp,
-                     tearDown=tearDown,
-                     optionflags=options),
+        DocFileSuite(
+                *glob(join(dirname(__file__),pardir,'docs','*.txt')),
+                module_relative=False,
+                setUp=setUp,
+                tearDown=tearDown,
+                optionflags=options
+                ),
         DocTestSuite(setUp=setUp,
                      tearDown=tearDown,
                      optionflags=options),
