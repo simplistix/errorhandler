@@ -1,4 +1,4 @@
-# Copyright (c) 2008 Simplistix Ltd
+# Copyright (c) 2008-2010 Simplistix Ltd
 #
 # This Software is released under the MIT License:
 # http://www.opensource.org/licenses/mit-license.html
@@ -124,11 +124,11 @@ options = REPORT_NDIFF|ELLIPSIS
 def test_suite():
     return unittest.TestSuite((
         DocFileSuite(
-                *glob(join(dirname(__file__),pardir,'docs','*.txt')),
                 module_relative=False,
                 setUp=setUp,
                 tearDown=tearDown,
-                optionflags=options
+                optionflags=options,
+                *glob(join(dirname(__file__),pardir,'docs','*.txt'))
                 ),
         DocTestSuite(setUp=setUp,
                      tearDown=tearDown,
