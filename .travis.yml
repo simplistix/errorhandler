@@ -1,0 +1,29 @@
+language: python
+
+# for container-y googdness:
+sudo: false
+
+python:
+  - "2.7"
+  - "2.6"
+
+# command to install dependencies
+install: "pip install -Ue .[test,build]"
+
+# command to run tests, e.g. python setup.py test
+script: nosetests --with-cov --cov=errorhandler
+
+after_success:
+  - coveralls
+
+deploy:
+  provider: pypi
+  user: chrisw
+  password:
+    secure: SAbdcoPv7EaHqs5/tGXqLR9s6eCK3w2DBddiyuADhmaoOVKrwgRRxvJK5lU5oSXnxVQXXCstKMtUIC2Vm+PiaKe6h61nnA71pCAj3vZ4WgpqW33ddzbXnHTUoptQ9snZr5P8hE6YVhckajNWjCXDjP4f+23fbdoN2lTQWahnNtGJHaPYZXaBP1hqFfcW8n/1VDKkhqctEkB6S+Tf8mFA7FEDXGqFlovLz9MfDqazT3rEHhsXTqd3+lVI5P8SpTmhNve9uxEWNVhdKnYJ1ttSyblhzTuPrlic2WfRI6L93NyYqekz5s/kcoAe7mcMD4hL17VduQGrAFa9ksYMV8ImbgkPY4is/yjZvZIZpF4kQnOLlU0J05ZpQRZ6nfhfq5flXQDCGAoIPfCdn8xcYBE+JLCiyBzjAcffw5snvZ3eGLLwSNf7DipHPTXkrl8XpRDZ41SLxZjiKJV4lPGpuYcH2Xqt0mmkZX7TRNwDwltWe3gYXlQ80GOgbYgEe7pFdEWXgK5o0FwSIblb7XQUgYot0B4Wmt16jH7WnOt8JuNWgDq4k+2hrYfByoXXuD4KH2ic9k+U9uHJb5UEuugJWDOr5ekOVVPyocknw8TF9exfdCBc4J26E4Cie2fmmVGbZuU68++pac1+Ohpy+sQT97qx41ZozrKGilh5AhRS24MAwbo=
+  on:
+    tags: true
+    repo: Simplistix/errorhandler
+    python: "2.7"
+  skip_cleanup: true
+  distributions: "sdist bdist_wheel"
