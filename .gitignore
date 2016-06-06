@@ -1,0 +1,15 @@
+/dist
+/docs/_build
+/eggs
+*.pyc
+/.coverage
+/*.xml
+/.tox
+/htmlcov
+/build
+/bin
+/include
+/lib
+pip-selfcheck.json
+/man
+*.egg-info

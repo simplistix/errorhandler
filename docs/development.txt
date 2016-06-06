@@ -3,30 +3,38 @@ Development
 
 .. highlight:: bash
 
-Once you've obtained a source checkout, you can follow these
+If you wish to contribute to this project, then you should fork the
+repository found here:
+
+https://github.com/Simplistix/errorhandler
+
+Once that has been done and you have a checkout, you can follow these
 instructions to perform various development tasks:
 
-Setting up the buildout
+Setting up a virtualenv
 -----------------------
 
-All development requires that you run the buildout::
+The recommended way to set up a development environment is to turn
+your checkout into a virtualenv and then install the package in
+editable form as follows::
 
-  $ python bootstrap.py
-  $ bin/buildout
+  $ virtualenv .
+  $ bin/pip install -U -e .[test,build]
 
 Running the tests
 -----------------
 
-Once you have a buildout, the tests can be run as follows::
+Once you've set up a virtualenv, the tests can be run as follows::
 
-  $ bin/test
+  $ bin/nosetests
 
 Building the documentation
 --------------------------
 
 The Sphinx documentation is built by doing the following from the
-directory containg setup.py::
+directory containing setup.py::
 
+  $ source bin/activate
   $ cd docs
   $ make html
 
