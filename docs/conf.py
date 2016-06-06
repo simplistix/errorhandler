@@ -14,7 +14,7 @@ intersphinx_mapping = {'http://docs.python.org/dev': None}
 source_suffix = '.txt'
 master_doc = 'index'
 project = pkg_info.name
-copyright = '2008-%s Simplistix Ltd' % datetime.datetime.now().year
+copyright = '2008-2015 Simplistix Ltd, %s Chris Withers' % datetime.datetime.now().year
 version = release = pkg_info.version
 exclude_trees = ['_build']
 unused_docs = ['description']
