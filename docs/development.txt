@@ -38,25 +38,20 @@ directory containing setup.py::
   $ cd docs
   $ make html
 
+To check that the description that will be used on PyPI renders properly,
+do the following::
+
+  $ python setup.py --long-description | rst2html.py > desc.html
+
+The resulting ``desc.html`` should be checked by opening in a browser.
+
 Making a release
 ----------------
 
-The first thing to do when making a release is to check that the ReST
-to be uploaded to PyPI is valid::
+To make a release, just update ``versions.txt``, update the change log, tag it
+and push to https://github.com/Simplistix/errorhandler
+and Travis CI should take care of the rest.
 
-  $ bin/docpy setup.py --long-description | bin/rst2 html \
-    --link-stylesheet \
-    --stylesheet=http://www.python.org/styles/styles.css > build/desc.html
-
-Once you're certain everything is as it should be, the following will
-build the distribution, upload it to PyPI, register the metadata with
-PyPI and upload the Sphinx documentation to PyPI::
-
-  $ bin/buildout -o
-  $ bin/docpy setup.py sdist upload register upload_sphinx --upload-dir=docs/_build/html
-
-The ``bin/buildout`` will make sure the correct package information is
-used.
-
-This should all be done on a unix box so that a `.tgz` source
-distribution is produced.
+Once Travis CI is done, make sure to go to
+https://readthedocs.org/projects/testfixtures/versions/
+and make sure the new release is marked as an Active Version.
