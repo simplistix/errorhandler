@@ -45,7 +45,7 @@ You can use this as a condition to only perform certain actions when
 no errors have been logged:
 
 >>> if e.fired:
-...   print "Not updating files as errors have occurred"
+...   print("Not updating files as errors have occurred")
 Not updating files as errors have occurred
 
 Resetting

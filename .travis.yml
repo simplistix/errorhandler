@@ -4,6 +4,9 @@ language: python
 sudo: false
 
 python:
+  - "3.5"
+  - "3.4"
+  - "3.3"
   - "2.7"
   - "2.6"
 
@@ -24,6 +27,6 @@ deploy:
   on:
     tags: true
     repo: Simplistix/errorhandler
-    python: "2.7"
+    python: "3.5"
   skip_cleanup: true
   distributions: "sdist bdist_wheel"
