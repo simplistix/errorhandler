@@ -14,7 +14,7 @@ setup(
     author_email='chris@simplistix.co.uk',
     license='MIT',
     description="A logging framework handler that tracks when messages above a certain level have been logged.",
-    long_description=open(os.path.join(base_dir,'docs','description.txt')).read(),
+    long_description=open(os.path.join(base_dir, 'README.rst')).read(),
     url='https://github.com/Simplistix/errorhandler',
     classifiers=[
     'Development Status :: 5 - Production/Stable',
