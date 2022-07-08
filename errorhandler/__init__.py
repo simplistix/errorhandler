@@ -1,13 +1,13 @@
 # Copyright (c) 2008 Simplistix Ltd
 # See license.txt for license details.
 
-from logging import Handler,ERROR,getLogger
+from logging import Handler,getLogger
 
-class ErrorHandler(Handler):
+class Handler(Handler):
 
     fired = False
     
-    def __init__(self,level=ERROR,logger='',install=True):
+    def __init__(self,level,logger='',install=True):
         Handler.__init__(self)
         self.level=level
         self.logger=logger
@@ -20,6 +20,7 @@ class ErrorHandler(Handler):
         
     def emit(self, record):
         self.fired=True
+        self.record = record
 
     def reset(self):
         self.fired=False

@@ -4,18 +4,18 @@
 import os
 from setuptools import setup
 
-package_name = 'errorhandler'
+package_name = 'loghandler'
 base_dir = os.path.dirname(__file__)
 
 setup(
     name=package_name,
     version=open(os.path.join(base_dir,package_name,'version.txt')).read().strip(),
-    author='Chris Withers',
-    author_email='chris@simplistix.co.uk',
+    author='Chris Withers, Joydeep Mukherjee',
+    author_email='chris@simplistix.co.uk, jm.joydeep@gmail.com',
     license='MIT',
     description="A logging framework handler that tracks when messages above a certain level have been logged.",
     long_description=open(os.path.join(base_dir, 'README.rst')).read(),
-    url='https://github.com/Simplistix/errorhandler',
+    url='https://github.com/joydeep0929/errorhandler.git',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -26,6 +26,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.8',
     ],
     packages=[package_name],
     zip_safe=False,
